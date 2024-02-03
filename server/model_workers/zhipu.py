@@ -37,7 +37,8 @@ class ChatGLMWorker(ApiModelWorker):
             model_names: List[str] = ["zhipu-api"],
             controller_addr: str = None,
             worker_addr: str = None,
-            version: Literal["chatglm_turbo"] = "chatglm_turbo",
+            #version: Literal["chatglm_turbo"] = "chatglm_turbo",
+            version: Literal["glm-4"] = "glm-4",
             **kwargs,
     ):
         kwargs.update(model_names=model_names, controller_addr=controller_addr, worker_addr=worker_addr)
@@ -59,6 +60,7 @@ class ChatGLMWorker(ApiModelWorker):
             "temperature": params.temperature,
             "stream": False
         }
+        #print(data)
         url = "https://open.bigmodel.cn/api/paas/v4/chat/completions"
         response = requests.post(url, headers=headers, json=data)
         # for chunk in response.iter_lines():
@@ -73,6 +75,7 @@ class ChatGLMWorker(ApiModelWorker):
         #                 content = delta.get('content', '')
         #                 yield {"error_code": 0, "text": content}
         ans = response.json()
+        #print(ans)
         content = ans["choices"][0]["message"]["content"]
         yield {"error_code": 0, "text": content}
 
