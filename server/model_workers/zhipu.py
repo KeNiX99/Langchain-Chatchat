@@ -53,6 +53,10 @@ class ChatGLMWorker(ApiModelWorker):
             "Content-Type": "application/json",
             "Authorization": f"Bearer {token}"
         }
+
+        print("小鬼头啊小鬼头")
+
+        print("data=>")
         data = {
             "model": params.version,
             "messages": params.messages,
@@ -60,7 +64,8 @@ class ChatGLMWorker(ApiModelWorker):
             "temperature": params.temperature,
             "stream": False
         }
-        #print(data)
+        print(data)
+        print("小鬼头啊小鬼头")
         url = "https://open.bigmodel.cn/api/paas/v4/chat/completions"
         response = requests.post(url, headers=headers, json=data)
         # for chunk in response.iter_lines():
