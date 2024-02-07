@@ -135,11 +135,11 @@ def dialogue_page(api: ApiRequest, is_lite: bool = False):
                     text = f"{text} 当前知识库： `{cur_kb}`。"
             st.toast(text)
 
-        dialogue_modes = ["LLM 对话",
+        dialogue_modes = [#"LLM 对话",
                           "知识库问答",
-                          "文件对话",
-                          "搜索引擎问答",
-                          "自定义Agent问答",
+                          #"文件对话",
+                          #"搜索引擎问答",
+                          #"自定义Agent问答",
                           ]
         dialogue_mode = st.selectbox("请选择对话模式：",
                                      dialogue_modes,
