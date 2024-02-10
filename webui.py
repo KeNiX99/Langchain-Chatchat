@@ -17,7 +17,8 @@ if __name__ == "__main__":
     st.set_page_config(
         "Pingan Memo work space WebUI",
         os.path.join("img", "chatchat_icon_blue_square_v2.png"),
-        initial_sidebar_state="expanded",
+        #initial_sidebar_state="expanded",
+        initial_sidebar_state = "collapsed",
         menu_items={
             'Get Help': 'https://github.com/chatchat-space/Langchain-Chatchat',
             'Report a bug': "https://github.com/chatchat-space/Langchain-Chatchat/issues",
