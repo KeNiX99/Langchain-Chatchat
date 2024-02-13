@@ -233,11 +233,11 @@ def anydialogue_page(api: ApiRequest, is_lite: bool = False):
             key="prompt_template_select",
         )
         '''
-        prompt_template_select = 'lastwill_knowledge_chat'
+        prompt_template_select = 'study_abroad_chat'
         print('prompt_template_select==>')
         print(prompt_template_select)
         #prompt_template_name = st.session_state.prompt_template_select
-        prompt_template_name = 'lastwill_knowledge_chat'
+        prompt_template_name = 'study_abroad_chat'
         print('prompt_template_name==>')
         print(prompt_template_name)
         #temperature = st.slider("Temperature：", 0.0, 2.0, TEMPERATURE, 0.05)
@@ -267,7 +267,7 @@ def anydialogue_page(api: ApiRequest, is_lite: bool = False):
                 ## Bge 模型会超过1
                 score_threshold = st.slider("知识匹配分数阈值：", 0.0, 2.0, float(SCORE_THRESHOLD), 0.01)
             '''
-            selected_kb = 'lastwill_kb'
+            selected_kb = 'study_abroad_kb'
             kb_top_k = int(VECTOR_SEARCH_TOP_K)
             score_threshold = float(SCORE_THRESHOLD)
             print(selected_kb)
