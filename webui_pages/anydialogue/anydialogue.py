@@ -104,7 +104,7 @@ def anydialogue_page(api: ApiRequest, is_lite: bool = False):
 
     if not chat_box.chat_inited:
         st.toast(
-            f"欢迎使用平安䇝工作台 \n\n"
+            f"欢迎使用澳洲留学咨询 \n\n"
         )
         chat_box.init_session()
 
